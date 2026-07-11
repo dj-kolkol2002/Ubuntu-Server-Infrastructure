@@ -39,22 +39,27 @@ The deployment followed a structured approach:
 
 **Action:** Connecting to the server remotely using a non-standard port (`2137`). The terminal displays successful authentication and the Ubuntu Server welcome message, confirming the customized SSH daemon configuration is operational.
 
-### 2. Network File Sharing (Samba)
+### 2. Web Hosting & SSL Verification (WordPress)
+![WordPress Site](wordpress.jpg)
+
+**Action:** Accessing the fully deployed WordPress CMS via a secure HTTPS connection (`https://www.company.local`). The presence of the padlock icon confirms successful SSL certificate implementation, while the customized front page serves as a technical portfolio for IT services.
+
+### 3. Network File Sharing (Samba)
 ![Samba Share](share_samba.png)
 
 **Action:** Accessing the shared network directory via a client machine file manager using the SMB protocol (`smb://192.168.0.240/share/`). The presence of the `Test_Helpdesk` file confirms read/write permissions are correctly assigned.
 
-### 3. Disaster Recovery Script (Bash)
+### 4. Disaster Recovery Script (Bash)
 ![Backup Script](backup_script.png)
 
 **Action:** Creating a custom Bash script (`wp-backup.sh`) that automates `mysqldump` for the database and `tar` for the web directory. The script includes a dedicated function to find and delete files older than 7 days to manage disk space autonomously.
 
-### 4. Task Scheduling (Crontab)
+### 5. Task Scheduling (Crontab)
 ![Crontab Configuration](crontab.png)
 
 **Action:** Editing the root user's crontab to execute the backup script automatically every day at 3:00 AM (`0 3 * * *`), effectively implementing an unattended maintenance window.
 
-### 5. Automated Backup Verification
+### 6. Automated Backup Verification
 ![Backup Directory](directory_backup.png)
 
 **Action:** Listing the contents of the `/var/backups/wordpress` directory. The output verifies that the script successfully generated both the SQL database dump (`.sql`) and the compressed web directory archive (`.tar.gz`) exactly at 03:00.
