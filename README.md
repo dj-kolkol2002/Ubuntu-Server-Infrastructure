@@ -40,7 +40,7 @@ The deployment followed a structured approach:
 **Action:** Connecting to the server remotely using a non-standard port (`2137`). The terminal displays successful authentication and the Ubuntu Server welcome message, confirming the customized SSH daemon configuration is operational.
 
 ### 2. Web Hosting & SSL Verification (WordPress)
-![WordPress Site](wordpress.jpg)
+![WordPress Site](wordpress.png)
 
 **Action:** Accessing the fully deployed WordPress CMS via a secure HTTPS connection (`https://www.company.local`). The presence of the padlock icon confirms successful SSL certificate implementation, while the customized front page serves as a technical portfolio for IT services.
 
